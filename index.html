@@ -30,39 +30,52 @@
             <div class="flex justify-between items-center h-20">
                 <div class="font-mono font-bold text-xl"><a href="#home" class="text-white">&lt;Dwiliandi<span class="text-accent">/</span>&gt;</a></div>
                 <div class="hidden md:flex space-x-8 font-mono text-sm">
-                    <a href="#about" class="text-textSecondary hover:text-accent transition-colors"><span class="text-accent">01.</span> About</a>
-                    <a href="#tech-stack" class="text-textSecondary hover:text-accent transition-colors"><span class="text-accent">02.</span> Tech Stack</a>
-                    <a href="#experience" class="text-textSecondary hover:text-accent transition-colors"><span class="text-accent">03.</span> Experience</a>
-                    <a href="#projects" class="text-textSecondary hover:text-accent transition-colors"><span class="text-accent">04.</span> Projects</a>
-                    <a href="#contact" class="text-textSecondary hover:text-accent transition-colors"><span class="text-accent">05.</span> Contact</a>
+                    <a href="#about" class="nav-link text-textSecondary hover:text-accent transition-colors"><span class="text-accent">01.</span> <span data-i18n="nav_about">About</span></a>
+                    <a href="#tech-stack" class="nav-link text-textSecondary hover:text-accent transition-colors"><span class="text-accent">02.</span> <span data-i18n="nav_tech_stack">Tech Stack</span></a>
+                    <a href="#experience" class="nav-link text-textSecondary hover:text-accent transition-colors"><span class="text-accent">03.</span> <span data-i18n="nav_experience">Experience</span></a>
+                    <a href="#projects" class="nav-link text-textSecondary hover:text-accent transition-colors"><span class="text-accent">04.</span> <span data-i18n="nav_projects">Projects</span></a>
+                    <a href="#engineering" class="nav-link text-textSecondary hover:text-accent transition-colors"><span class="text-accent">05.</span> <span data-i18n="nav_engineering">Engineering</span></a>
+                    <a href="#contact" class="nav-link text-textSecondary hover:text-accent transition-colors"><span class="text-accent">06.</span> <span data-i18n="nav_contact">Contact</span></a>
                 </div>
-                <div class="md:hidden flex items-center">
+                <!-- Language Toggle -->
+                <div class="hidden md:flex items-center">
+                    <button id="lang-toggle" class="px-3 py-1.5 rounded border border-accent text-accent font-mono text-xs hover:bg-accent/10 transition-colors flex items-center gap-2">
+                        <img src="https://flagcdn.com/w20/us.png" alt="EN Flag" class="w-4 h-3 object-cover rounded-sm lang-flag">
+                        <span class="lang-text">EN</span>
+                    </button>
+                </div>
+                <div class="md:hidden flex items-center gap-4">
+                    <button id="lang-toggle-mobile" class="px-3 py-1.5 rounded border border-accent text-accent font-mono text-xs hover:bg-accent/10 transition-colors flex items-center gap-2">
+                        <img src="https://flagcdn.com/w20/us.png" alt="EN Flag" class="w-4 h-3 object-cover rounded-sm lang-flag">
+                        <span class="lang-text">EN</span>
+                    </button>
                     <button id="menu-toggle" class="text-textSecondary hover:text-white"><i data-lucide="menu"></i></button>
                 </div>
             </div>
         </div>
         <div id="mobile-menu" class="hidden md:hidden bg-cardDark border-t border-gray-800 absolute w-full left-0 top-20 shadow-xl">
             <div class="px-4 py-2 space-y-1 font-mono text-sm">
-                <a href="#about" class="mobile-link block px-3 py-3 text-textSecondary hover:text-accent">01. About</a>
-                <a href="#tech-stack" class="mobile-link block px-3 py-3 text-textSecondary hover:text-accent">02. Tech Stack</a>
-                <a href="#experience" class="mobile-link block px-3 py-3 text-textSecondary hover:text-accent">03. Experience</a>
-                <a href="#projects" class="mobile-link block px-3 py-3 text-textSecondary hover:text-accent">04. Projects</a>
-                <a href="#contact" class="mobile-link block px-3 py-3 text-textSecondary hover:text-accent">05. Contact</a>
+                <a href="#about" class="mobile-link block px-3 py-3 text-textSecondary hover:text-accent">01. <span data-i18n="nav_about_mobile">About</span></a>
+                <a href="#tech-stack" class="mobile-link block px-3 py-3 text-textSecondary hover:text-accent">02. <span data-i18n="nav_tech_stack_mobile">Tech Stack</span></a>
+                <a href="#experience" class="mobile-link block px-3 py-3 text-textSecondary hover:text-accent">03. <span data-i18n="nav_experience_mobile">Experience</span></a>
+                <a href="#projects" class="mobile-link block px-3 py-3 text-textSecondary hover:text-accent">04. <span data-i18n="nav_projects_mobile">Projects</span></a>
+                <a href="#engineering" class="mobile-link block px-3 py-3 text-textSecondary hover:text-accent">05. <span data-i18n="nav_engineering_mobile">Engineering</span></a>
+                <a href="#contact" class="mobile-link block px-3 py-3 text-textSecondary hover:text-accent">06. <span data-i18n="nav_contact_mobile">Contact</span></a>
             </div>
         </div>
     </nav>
 
     <section id="home" class="min-h-screen flex items-center justify-center pt-20 relative animate-on-scroll">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <p class="font-mono text-accent mb-5 text-sm md:text-base">Hi, my name is</p>
+            <p class="font-mono text-accent mb-5 text-sm md:text-base" data-i18n="hero_hello">Hi, my name is</p>
             <h1 class="text-5xl md:text-7xl font-bold text-white mb-2">Dwiliandi Omega.</h1>
-            <h2 class="text-4xl md:text-6xl font-bold text-textSecondary mb-8"><span class="text-gradient">Backend Developer</span></h2>
-            <p class="max-w-2xl mx-auto text-lg md:text-xl text-textSecondary leading-relaxed mb-12">
+            <h2 class="text-3xl md:text-5xl font-bold text-gray-400 mb-6" data-i18n="hero_title">Backend Developer</h2>
+            <p class="max-w-2xl mx-auto text-lg md:text-xl text-textSecondary leading-relaxed mb-12" data-i18n="hero_desc">
                 Backend Developer with 4+ years experience building database-driven applications and APIs.
             </p>
             <div class="flex justify-center gap-6">
-                <a href="#projects" class="px-8 py-4 rounded bg-accent text-bgDarker font-semibold hover:bg-[#059669] transition-colors">View Projects</a>
-                <a href="#contact" class="px-8 py-4 rounded bg-transparent border border-accent text-accent font-semibold hover:bg-accent/10 transition-colors">Contact Me</a>
+                <a href="#projects" class="px-8 py-4 rounded bg-accent text-bgDarker font-semibold hover:bg-[#059669] transition-colors" data-i18n="hero_btn_projects">View Projects</a>
+                <a href="#contact" class="px-8 py-4 rounded bg-transparent border border-accent text-accent font-semibold hover:bg-accent/10 transition-colors" data-i18n="hero_btn_contact">Contact Me</a>
             </div>
         </div>
     </section>
@@ -70,11 +83,11 @@
     <section id="about" class="py-24 bg-bgDark">
         <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 animate-on-scroll">
             <div class="flex items-center gap-4 mb-10">
-                <h2 class="text-2xl md:text-3xl font-bold text-white"><span class="text-accent font-mono text-xl mr-2">01.</span> About Me</h2>
+                <h2 class="text-2xl md:text-3xl font-bold text-white"><span class="text-accent font-mono text-xl mr-2">01.</span> <span data-i18n="about_title">About Me</span></h2>
                 <div class="h-px bg-gray-800 flex-grow"></div>
             </div>
             <div class="glass-card rounded-xl p-8 md:p-10">
-                <p class="text-lg md:text-xl text-textSecondary leading-relaxed">
+                <p class="text-lg md:text-xl text-textSecondary leading-relaxed" data-i18n="about_desc">
                     Backend developer with experience in Laravel and Ruby on Rails. Focused on building scalable backend systems, designing efficient databases, and creating reliable APIs.
                 </p>
             </div>
@@ -136,7 +149,7 @@
     <section id="experience" class="py-24 bg-bgDark">
         <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 animate-on-scroll">
             <div class="flex items-center gap-4 mb-12">
-                <h2 class="text-2xl md:text-3xl font-bold text-white"><span class="text-accent font-mono text-xl mr-2">03.</span> Experience</h2>
+                <h2 class="text-2xl md:text-3xl font-bold text-white"><span class="text-accent font-mono text-xl mr-2">03.</span> <span data-i18n="experience_title">Experience</span></h2>
                 <div class="h-px bg-gray-800 flex-grow"></div>
             </div>
             <div class="glass-card rounded-xl p-8 border-l-4 border-l-accent border-t-0 border-r-0 border-b-0">
@@ -147,13 +160,13 @@
                     </div>
                     <p class="font-mono text-textSecondary text-sm bg-bgDarker px-3 py-1 rounded">2021 - Present</p>
                 </div>
-                <p class="text-white font-semibold mb-4 text-sm tracking-wide uppercase">Responsibilities:</p>
+                <p class="text-white font-semibold mb-4 text-sm tracking-wide uppercase" data-i18n="experience_resp">Responsibilities:</p>
                 <ul class="space-y-4 text-textSecondary">
-                    <li class="flex items-start"><i data-lucide="check-square" class="w-5 h-5 text-accent mr-4 mt-0.5"></i><span>Develop backend services and REST APIs</span></li>
-                    <li class="flex items-start"><i data-lucide="check-square" class="w-5 h-5 text-accent mr-4 mt-0.5"></i><span>Design and optimize database structures</span></li>
-                    <li class="flex items-start"><i data-lucide="check-square" class="w-5 h-5 text-accent mr-4 mt-0.5"></i><span>Implement authentication and authorization</span></li>
-                    <li class="flex items-start"><i data-lucide="check-square" class="w-5 h-5 text-accent mr-4 mt-0.5"></i><span>Improve application performance</span></li>
-                    <li class="flex items-start"><i data-lucide="check-square" class="w-5 h-5 text-accent mr-4 mt-0.5"></i><span>Debug and maintain existing systems</span></li>
+                    <li class="flex items-start"><i data-lucide="check-square" class="w-5 h-5 text-accent mr-4 mt-0.5"></i><span data-i18n="experience_resp_1">Develop backend services and REST APIs</span></li>
+                    <li class="flex items-start"><i data-lucide="check-square" class="w-5 h-5 text-accent mr-4 mt-0.5"></i><span data-i18n="experience_resp_2">Design and optimize database structures</span></li>
+                    <li class="flex items-start"><i data-lucide="check-square" class="w-5 h-5 text-accent mr-4 mt-0.5"></i><span data-i18n="experience_resp_3">Implement authentication and authorization</span></li>
+                    <li class="flex items-start"><i data-lucide="check-square" class="w-5 h-5 text-accent mr-4 mt-0.5"></i><span data-i18n="experience_resp_4">Improve application performance</span></li>
+                    <li class="flex items-start"><i data-lucide="check-square" class="w-5 h-5 text-accent mr-4 mt-0.5"></i><span data-i18n="experience_resp_5">Debug and maintain existing systems</span></li>
                 </ul>
             </div>
         </div>
@@ -161,45 +174,15 @@
 
     <section id="projects" class="py-24 bg-bgDarker">
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 animate-on-scroll">
-            <div class="flex items-center gap-4 mb-16">
-                <h2 class="text-2xl md:text-3xl font-bold text-white"><span class="text-accent font-mono text-xl mr-2">04.</span> Projects</h2>
+            <div class="flex items-center gap-4 mb-12">
+                <h2 class="text-2xl md:text-3xl font-bold text-white"><span class="text-accent font-mono text-xl mr-2">04.</span> <span data-i18n="projects_title">Projects</span></h2>
                 <div class="h-px bg-gray-800 flex-grow"></div>
             </div>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Project 1 -->
-                <div class="glass-card rounded-xl overflow-hidden group flex flex-col h-full hover:-translate-y-2 transition-transform duration-300 cursor-pointer project-card" data-title="Backend API System" data-desc="REST API backend system with authentication, role management, and database optimization." data-image="https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&q=80&w=800" data-tech="PHP, Laravel, MySQL, REST API">
+                <!-- Project 1: ESS -->
+                <div class="glass-card rounded-xl overflow-hidden group flex flex-col h-full hover:-translate-y-2 transition-transform duration-300 cursor-pointer project-card" data-title="ESS (Employee Self Service)" data-desc="A comprehensive Human Resources platform for employees to manage their own attendance, leave requests, and personal information." data-id-desc="Platform Human Resources komprehensif untuk karyawan dalam mengelola kehadiran, permintaan cuti, dan informasi pribadi." data-image="https://images.unsplash.com/photo-1542626991-cbc4e32524cc?auto=format&fit=crop&q=80&w=800" data-tech="Laravel, MySQL, JS, Ajax, Datatable" data-role="Backend Developer" data-id-role="Backend Developer">
                     <div class="relative h-48 overflow-hidden bg-bgDark">
-                        <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&q=80&w=800" alt="Backend API System" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500 group-hover:scale-110 opacity-60 group-hover:opacity-100">
-                        <div class="absolute inset-0 bg-accent/20 mix-blend-multiply group-hover:opacity-0 transition-opacity"></div>
-                    </div>
-                    <div class="p-8 flex flex-col flex-grow">
-                        <div class="flex justify-between items-start mb-6">
-                            <i data-lucide="server" class="w-8 h-8 text-accent"></i>
-                            <i data-lucide="external-link" class="w-5 h-5 text-textSecondary opacity-0 group-hover:opacity-100 transition-opacity duration-300"></i>
-                        </div>
-                        <h3 class="text-xl font-bold text-white mb-3 group-hover:text-accent transition-colors">Backend API System</h3>
-                        <p class="text-textSecondary text-sm mb-6 flex-grow">REST API backend system with authentication, role management, and database optimization.</p>
-                    </div>
-                </div>
-                <!-- Project 2 -->
-                <div class="glass-card rounded-xl overflow-hidden group flex flex-col h-full hover:-translate-y-2 transition-transform duration-300 cursor-pointer project-card" data-title="Automation Telegram Bot" data-desc="Automation bot using event driven architecture and asynchronous task processing." data-image="https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&q=80&w=800" data-tech="PHP, Telegram API, Webhooks, Async">
-                    <div class="relative h-48 overflow-hidden bg-bgDark">
-                        <img src="https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&q=80&w=800" alt="Automation Telegram Bot" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500 group-hover:scale-110 opacity-60 group-hover:opacity-100">
-                        <div class="absolute inset-0 bg-accent/20 mix-blend-multiply group-hover:opacity-0 transition-opacity"></div>
-                    </div>
-                    <div class="p-8 flex flex-col flex-grow">
-                        <div class="flex justify-between items-start mb-6">
-                            <i data-lucide="bot" class="w-8 h-8 text-accent"></i>
-                            <i data-lucide="external-link" class="w-5 h-5 text-textSecondary opacity-0 group-hover:opacity-100 transition-opacity duration-300"></i>
-                        </div>
-                        <h3 class="text-xl font-bold text-white mb-3 group-hover:text-accent transition-colors">Automation Telegram Bot</h3>
-                        <p class="text-textSecondary text-sm mb-6 flex-grow">Automation bot using event driven architecture and asynchronous task processing.</p>
-                    </div>
-                </div>
-                <!-- Project 3 -->
-                <div class="glass-card rounded-xl overflow-hidden group flex flex-col h-full hover:-translate-y-2 transition-transform duration-300 cursor-pointer project-card" data-title="Employee Leave Management" data-desc="Backend system for employee leave requests, approval workflow, and leave calculation." data-image="https://images.unsplash.com/photo-1542626991-cbc4e32524cc?auto=format&fit=crop&q=80&w=800" data-tech="Ruby on Rails, PostgreSQL, TailwindCSS">
-                    <div class="relative h-48 overflow-hidden bg-bgDark">
-                        <img src="https://images.unsplash.com/photo-1542626991-cbc4e32524cc?auto=format&fit=crop&q=80&w=800" alt="Employee Leave Management" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500 group-hover:scale-110 opacity-60 group-hover:opacity-100">
+                        <img src="https://images.unsplash.com/photo-1542626991-cbc4e32524cc?auto=format&fit=crop&q=80&w=800" alt="Employee Self Service" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500 group-hover:scale-110 opacity-60 group-hover:opacity-100">
                         <div class="absolute inset-0 bg-accent/20 mix-blend-multiply group-hover:opacity-0 transition-opacity"></div>
                     </div>
                     <div class="p-8 flex flex-col flex-grow">
@@ -207,31 +190,238 @@
                             <i data-lucide="users" class="w-8 h-8 text-accent"></i>
                             <i data-lucide="external-link" class="w-5 h-5 text-textSecondary opacity-0 group-hover:opacity-100 transition-opacity duration-300"></i>
                         </div>
-                        <h3 class="text-xl font-bold text-white mb-3 group-hover:text-accent transition-colors">Employee Leave Management</h3>
-                        <p class="text-textSecondary text-sm mb-6 flex-grow">Backend system for employee leave requests, approval workflow, and leave calculation.</p>
+                        <h3 class="text-xl font-bold text-white mb-3 group-hover:text-accent transition-colors">ESS (Employee Self Service)</h3>
+                        <p class="text-textSecondary text-sm mb-6 flex-grow project-desc">A comprehensive Human Resources platform for employees to manage their own attendance, leave requests, and personal information.</p>
+                    </div>
+                </div>
+                
+                <!-- Project 2: Oharalibrary.xyz -->
+                <div class="glass-card rounded-xl overflow-hidden group flex flex-col h-full hover:-translate-y-2 transition-transform duration-300 cursor-pointer project-card" data-title="Oharalibrary.xyz" data-desc="A wiki and comprehensive guide system for a Telegram bot game. Powered by a robust backend API." data-id-desc="Sistem panduan dan wiki komprehensif untuk game Telegram bot. Ditenagai oleh backend API yang tangguh." data-image="https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&q=80&w=800" data-tech="Laravel, MySQL, Ajax, Datatable, Python, Telethon, REST API" data-role="Fullstack Developer & API Designer" data-id-role="Fullstack Developer & API Designer">
+                    <div class="relative h-48 overflow-hidden bg-bgDark">
+                        <img src="https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&q=80&w=800" alt="Oharalibrary.xyz" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500 group-hover:scale-110 opacity-60 group-hover:opacity-100">
+                        <div class="absolute inset-0 bg-accent/20 mix-blend-multiply group-hover:opacity-0 transition-opacity"></div>
+                    </div>
+                    <div class="p-8 flex flex-col flex-grow">
+                        <div class="flex justify-between items-start mb-6">
+                            <i data-lucide="book-open" class="w-8 h-8 text-accent"></i>
+                            <i data-lucide="external-link" class="w-5 h-5 text-textSecondary opacity-0 group-hover:opacity-100 transition-opacity duration-300"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-3 group-hover:text-accent transition-colors">Oharalibrary.xyz</h3>
+                        <p class="text-textSecondary text-sm mb-6 flex-grow project-desc">A wiki and comprehensive guide system for a Telegram bot game. Powered by a robust backend API.</p>
+                    </div>
+                </div>
+                
+                <!-- Project 3: Website Undangan -->
+                <div class="glass-card rounded-xl overflow-hidden group flex flex-col h-full hover:-translate-y-2 transition-transform duration-300 cursor-pointer project-card" data-title="Website Undangan Digital" data-desc="A digital invitation platform allowing users to generate, customize, and distribute event invitations easily." data-id-desc="Platform undangan digital yang memungkinkan pengguna untuk membuat, menyesuaikan, dan membagikan undangan acara dengan mudah." data-image="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&q=80&w=800" data-tech="HTML, JS, SQL" data-role="Web Developer" data-id-role="Web Developer">
+                    <div class="relative h-48 overflow-hidden bg-bgDark">
+                        <img src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&q=80&w=800" alt="Website Undangan Digital" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500 group-hover:scale-110 opacity-60 group-hover:opacity-100">
+                        <div class="absolute inset-0 bg-accent/20 mix-blend-multiply group-hover:opacity-0 transition-opacity"></div>
+                    </div>
+                    <div class="p-8 flex flex-col flex-grow">
+                        <div class="flex justify-between items-start mb-6">
+                            <i data-lucide="mail-open" class="w-8 h-8 text-accent"></i>
+                            <i data-lucide="external-link" class="w-5 h-5 text-textSecondary opacity-0 group-hover:opacity-100 transition-opacity duration-300"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-3 group-hover:text-accent transition-colors">Website Undangan</h3>
+                        <p class="text-textSecondary text-sm mb-6 flex-grow project-desc">A digital invitation platform allowing users to generate, customize, and distribute event invitations easily.</p>
+                    </div>
+                </div>
+
+                <!-- Project 4: Website Gereja -->
+                <div class="glass-card rounded-xl overflow-hidden group flex flex-col h-full hover:-translate-y-2 transition-transform duration-300 cursor-pointer project-card" data-title="Website Profil Gereja" data-desc="A church profiling website featuring event schedules, sermon archives, and congregation management system." data-id-desc="Website profil gereja yang menampilkan jadwal acara, arsip khotbah, dan sistem manajemen jemaat." data-image="https://images.unsplash.com/photo-1438232992991-995b7058bbb3?auto=format&fit=crop&q=80&w=800" data-tech="Laravel, Livewire, MySQL, JS, Ajax, CSS" data-role="Fullstack Developer" data-id-role="Fullstack Developer">
+                    <div class="relative h-48 overflow-hidden bg-bgDark">
+                        <img src="https://images.unsplash.com/photo-1438232992991-995b7058bbb3?auto=format&fit=crop&q=80&w=800" alt="Website Profil Gereja" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500 group-hover:scale-110 opacity-60 group-hover:opacity-100">
+                        <div class="absolute inset-0 bg-accent/20 mix-blend-multiply group-hover:opacity-0 transition-opacity"></div>
+                    </div>
+                    <div class="p-8 flex flex-col flex-grow">
+                        <div class="flex justify-between items-start mb-6">
+                            <i data-lucide="landmark" class="w-8 h-8 text-accent"></i>
+                            <i data-lucide="external-link" class="w-5 h-5 text-textSecondary opacity-0 group-hover:opacity-100 transition-opacity duration-300"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-3 group-hover:text-accent transition-colors">Website Gereja</h3>
+                        <p class="text-textSecondary text-sm mb-6 flex-grow project-desc">A church profiling website featuring event schedules, sermon archives, and congregation management system.</p>
+                    </div>
+                </div>
+
+                <!-- Project 5: Website Event -->
+                <div class="glass-card rounded-xl overflow-hidden group flex flex-col h-full hover:-translate-y-2 transition-transform duration-300 cursor-pointer project-card" data-title="Website Event Landing Page" data-desc="A highly responsive and animated front-end landing page for upcoming events and ticketing information." data-id-desc="Halaman landing front-end yang sangat responsif dan memiliki animasi untuk acara mendatang dan informasi tiket." data-image="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&q=80&w=800" data-tech="HTML, CSS, JS" data-role="Frontend Developer" data-id-role="Frontend Developer">
+                    <div class="relative h-48 overflow-hidden bg-bgDark">
+                        <img src="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&q=80&w=800" alt="Website Event Landing Page" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500 group-hover:scale-110 opacity-60 group-hover:opacity-100">
+                        <div class="absolute inset-0 bg-accent/20 mix-blend-multiply group-hover:opacity-0 transition-opacity"></div>
+                    </div>
+                    <div class="p-8 flex flex-col flex-grow">
+                        <div class="flex justify-between items-start mb-6">
+                            <i data-lucide="calendar" class="w-8 h-8 text-accent"></i>
+                            <i data-lucide="external-link" class="w-5 h-5 text-textSecondary opacity-0 group-hover:opacity-100 transition-opacity duration-300"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-3 group-hover:text-accent transition-colors">Website Event</h3>
+                        <p class="text-textSecondary text-sm mb-6 flex-grow project-desc">A highly responsive and animated front-end landing page for upcoming events and ticketing information.</p>
+                    </div>
+                </div>
+
+                <!-- Project 6: Entice -->
+                <div class="glass-card rounded-xl overflow-hidden group flex flex-col h-full hover:-translate-y-2 transition-transform duration-300 cursor-pointer project-card" data-title="Entice (Project Skripsi)" data-desc="A final year university project utilizing Ruby on Rails backend to handle data efficiently." data-id-desc="Proyek skripsi tahun akhir universitas yang menggunakan backend Ruby on Rails untuk menangani data secara efisien." data-image="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&q=80&w=800" data-tech="Ruby on Rails, Ajax, Datatable" data-role="Solo Developer" data-id-role="Solo Developer">
+                    <div class="relative h-48 overflow-hidden bg-bgDark">
+                        <img src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&q=80&w=800" alt="Entice Project Skripsi" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500 group-hover:scale-110 opacity-60 group-hover:opacity-100">
+                        <div class="absolute inset-0 bg-accent/20 mix-blend-multiply group-hover:opacity-0 transition-opacity"></div>
+                    </div>
+                    <div class="p-8 flex flex-col flex-grow">
+                        <div class="flex justify-between items-start mb-6">
+                            <i data-lucide="graduation-cap" class="w-8 h-8 text-accent"></i>
+                            <i data-lucide="external-link" class="w-5 h-5 text-textSecondary opacity-0 group-hover:opacity-100 transition-opacity duration-300"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-3 group-hover:text-accent transition-colors">Entice (Project Skripsi)</h3>
+                        <p class="text-textSecondary text-sm mb-6 flex-grow project-desc">A final year university project utilizing Ruby on Rails backend to handle data efficiently.</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="github" class="py-20 bg-bgDark relative overflow-hidden text-center animate-on-scroll">
+    <section id="engineering" class="py-24 bg-bgDark">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 animate-on-scroll">
+            <div class="flex items-center gap-4 mb-8">
+                <h2 class="text-2xl md:text-3xl font-bold text-white"><span class="text-accent font-mono text-xl mr-2">05.</span> <span data-i18n="engineering_title">Engineering Experience</span></h2>
+                <div class="h-px bg-gray-800 flex-grow"></div>
+            </div>
+            
+            <p class="text-lg text-textSecondary leading-relaxed mb-12 max-w-3xl" data-i18n="engineering_desc">
+                Experience in building backend systems, automation tools, and managing application deployment.
+            </p>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- API Development -->
+                <div class="glass-card rounded-xl p-8 hover:-translate-y-2 transition-transform duration-300">
+                    <div class="flex items-center mb-6">
+                        <div class="w-12 h-12 rounded-lg bg-accent/10 flex items-center justify-center text-accent mr-4">
+                            <i data-lucide="network" class="w-6 h-6"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white">API Development</h3>
+                    </div>
+                    <ul class="space-y-3 text-textSecondary">
+                        <li class="flex items-start">
+                            <i data-lucide="server-cog" class="w-5 h-5 text-accent mr-3 flex-shrink-0 mt-0.5"></i>
+                            <span>Design RESTful API endpoints</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i data-lucide="shield-check" class="w-5 h-5 text-accent mr-3 flex-shrink-0 mt-0.5"></i>
+                            <span>Implement authentication and authorization</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i data-lucide="file-json" class="w-5 h-5 text-accent mr-3 flex-shrink-0 mt-0.5"></i>
+                            <span>Standardize JSON API responses</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i data-lucide="list-tree" class="w-5 h-5 text-accent mr-3 flex-shrink-0 mt-0.5"></i>
+                            <span>Handle pagination and request validation</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- Backend Architecture -->
+                <div class="glass-card rounded-xl p-8 hover:-translate-y-2 transition-transform duration-300">
+                    <div class="flex items-center mb-6">
+                        <div class="w-12 h-12 rounded-lg bg-blue-500/10 flex items-center justify-center text-blue-500 mr-4">
+                            <i data-lucide="boxes" class="w-6 h-6"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white">Backend Architecture</h3>
+                    </div>
+                    <ul class="space-y-3 text-textSecondary">
+                        <li class="flex items-start">
+                            <i data-lucide="blocks" class="w-5 h-5 text-accent mr-3 flex-shrink-0 mt-0.5"></i>
+                            <span>Build modular backend structure</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i data-lucide="cog" class="w-5 h-5 text-accent mr-3 flex-shrink-0 mt-0.5"></i>
+                            <span>Implement service-based logic</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i data-lucide="database-zap" class="w-5 h-5 text-accent mr-3 flex-shrink-0 mt-0.5"></i>
+                            <span>Optimize database queries and relationships</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i data-lucide="scaling" class="w-5 h-5 text-accent mr-3 flex-shrink-0 mt-0.5"></i>
+                            <span>Maintain scalable backend logic</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- Automation Systems -->
+                <div class="glass-card rounded-xl p-8 hover:-translate-y-2 transition-transform duration-300">
+                    <div class="flex items-center mb-6">
+                        <div class="w-12 h-12 rounded-lg bg-orange-500/10 flex items-center justify-center text-orange-500 mr-4">
+                            <i data-lucide="cpu" class="w-6 h-6"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white">Automation Systems</h3>
+                    </div>
+                    <ul class="space-y-3 text-textSecondary">
+                        <li class="flex items-start">
+                            <i data-lucide="bot" class="w-5 h-5 text-accent mr-3 flex-shrink-0 mt-0.5"></i>
+                            <span>Build event-driven automation scripts</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i data-lucide="workflow" class="w-5 h-5 text-accent mr-3 flex-shrink-0 mt-0.5"></i>
+                            <span>Implement asynchronous task processing</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i data-lucide="webhook" class="w-5 h-5 text-accent mr-3 flex-shrink-0 mt-0.5"></i>
+                            <span>Parse external system messages and trigger actions</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i data-lucide="timer" class="w-5 h-5 text-accent mr-3 flex-shrink-0 mt-0.5"></i>
+                            <span>Manage long-running background processes</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- Deployment & Server -->
+                <div class="glass-card rounded-xl p-8 hover:-translate-y-2 transition-transform duration-300">
+                    <div class="flex items-center mb-6">
+                        <div class="w-12 h-12 rounded-lg bg-purple-500/10 flex items-center justify-center text-purple-500 mr-4">
+                            <i data-lucide="server" class="w-6 h-6"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white">Deployment & Server</h3>
+                    </div>
+                    <ul class="space-y-3 text-textSecondary">
+                        <li class="flex items-start">
+                            <i data-lucide="cloud" class="w-5 h-5 text-accent mr-3 flex-shrink-0 mt-0.5"></i>
+                            <span>Deploy Laravel applications to VPS environments</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i data-lucide="terminal" class="w-5 h-5 text-accent mr-3 flex-shrink-0 mt-0.5"></i>
+                            <span>Run automation scripts on Linux servers</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i data-lucide="package-check" class="w-5 h-5 text-accent mr-3 flex-shrink-0 mt-0.5"></i>
+                            <span>Manage dependencies using Composer and pip</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i data-lucide="key" class="w-5 h-5 text-accent mr-3 flex-shrink-0 mt-0.5"></i>
+                            <span>Maintain applications using SSH access</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="github" class="py-20 bg-bgDarker relative overflow-hidden text-center animate-on-scroll">
         <div class="absolute inset-0 z-0 bg-gradient-to-b from-transparent to-accent/5"></div>
         <div class="max-w-4xl mx-auto px-4 relative z-10">
             <div class="w-20 h-20 mx-auto bg-cardDark rounded-2xl border border-gray-700 flex items-center justify-center mb-8 rotate-3 hover:rotate-0 transition-transform duration-300 group">
                 <i data-lucide="github" class="w-10 h-10 text-white group-hover:text-accent transition-colors"></i>
             </div>
-            <p class="text-xl text-textSecondary mb-10">More projects available on my GitHub profile.</p>
-            <a href="https://github.com/dwiliandy" target="_blank" rel="noopener noreferrer" class="inline-flex items-center px-8 py-4 rounded bg-white text-bgDarker font-bold hover:bg-gray-200 transition-colors shadow-xl">
+            <p class="text-xl text-textSecondary mb-10" data-i18n="github_desc">More projects available on my GitHub profile.</p>
+            <a href="https://github.com/dwiliandy" target="_blank" rel="noopener noreferrer" class="inline-flex items-center px-8 py-4 rounded bg-white text-bgDarker font-bold hover:bg-gray-200 transition-colors shadow-xl" data-i18n="github_btn">
                 <i data-lucide="github" class="w-5 h-5 mr-3"></i>GitHub Profile
             </a>
         </div>
     </section>
 
-    <section id="contact" class="py-32 bg-bgDarker text-center animate-on-scroll">
+    <section id="contact" class="py-32 bg-bgDark text-center animate-on-scroll">
         <div class="max-w-2xl mx-auto px-4">
-            <p class="font-mono text-accent mb-4"><span class="mr-2">05.</span>What's Next?</p>
-            <h2 class="text-4xl md:text-5xl font-bold text-white mb-10">Get In Touch</h2>
+            <p class="font-mono text-accent mb-4"><span class="mr-2">06.</span><span data-i18n="contact_subtitle">What's Next?</span></p>
+            <h2 class="text-4xl md:text-5xl font-bold text-white mb-10" data-i18n="contact_title">Get In Touch</h2>
             <div class="glass-card rounded-xl p-8 mb-12 flex flex-col sm:flex-row items-center justify-center gap-8">
                 <div class="flex items-center group cursor-pointer w-full md:w-auto justify-center">
                     <div class="bg-accent/10 p-3 rounded-lg mr-4 group-hover:bg-accent transition-colors">
@@ -247,12 +437,12 @@
                         <i data-lucide="phone" class="w-6 h-6 text-accent group-hover:text-bgDark transition-colors"></i>
                     </div>
                     <div class="text-left">
-                        <p class="text-sm text-textSecondary font-mono mb-1">Phone</p>
+                        <p class="text-sm text-textSecondary font-mono mb-1" data-i18n="contact_phone">Phone</p>
                         <a href="tel:+6285825315899" class="text-lg font-medium text-white hover:text-accent transition-colors">+62 858-2531-5899</a>
                     </div>
                 </div>
             </div>
-            <a href="mailto:dwiliandy@gmail.com" class="inline-block px-10 py-5 rounded bg-transparent border-2 border-accent text-accent font-bold hover:bg-accent/10 transition-colors text-lg tracking-wide">
+            <a href="mailto:dwiliandy@gmail.com" class="inline-block px-10 py-5 rounded bg-transparent border-2 border-accent text-accent font-bold hover:bg-accent/10 transition-colors text-lg tracking-wide" data-i18n="contact_btn">
                 Send Email
             </a>
         </div>
@@ -260,7 +450,7 @@
 
     <footer class="bg-bgDarker py-8 text-center text-textSecondary text-sm font-mono flex flex-col items-center gap-2">
         <a href="https://github.com/dwiliandy" target="_blank" rel="noopener noreferrer" class="hover:text-accent transition-colors mb-2"><i data-lucide="github" class="w-5 h-5"></i></a>
-        <p class="flex items-center gap-2"><i data-lucide="code-2" class="w-4 h-4 text-accent"></i> Copyright Dwiliandi Omega &copy; 2026</p>
+        <p class="flex items-center gap-2"><i data-lucide="code-2" class="w-4 h-4 text-accent"></i> <span data-i18n="footer_copy">Copyright</span> Dwiliandi Omega &copy; 2026</p>
     </footer>
 
     <!-- Project Modal -->
@@ -280,7 +470,8 @@
             </div>
             
             <div class="w-full md:w-3/5 p-8 md:p-10 flex flex-col relative z-10">
-                <h3 id="modal-title" class="text-2xl md:text-3xl font-bold text-white mb-4">Project Title</h3>
+                <h3 id="modal-title" class="text-2xl md:text-3xl font-bold text-white mb-2">Project Title</h3>
+                <p id="modal-role" class="text-accent text-sm font-mono mb-6">Role Name</p>
                 <p id="modal-desc" class="text-textSecondary text-lg mb-8 leading-relaxed flex-grow">Project Description goes here.</p>
                 
                 <div class="mt-auto">
@@ -295,6 +486,7 @@
         </div>
     </div>
 
+    <script src="lang.js"></script>
     <script src="script.js"></script>
 </body>
 </html>

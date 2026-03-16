@@ -79,16 +79,21 @@ const projectCards = document.querySelectorAll('.project-card');
 
 const modalImage = document.getElementById('modal-image');
 const modalTitle = document.getElementById('modal-title');
+const modalRole = document.getElementById('modal-role');
 const modalDesc = document.getElementById('modal-desc');
 const modalTech = document.getElementById('modal-tech');
 
 function openModal(card) {
     const title = card.getAttribute('data-title');
-    const desc = card.getAttribute('data-desc');
     const image = card.getAttribute('data-image');
     const techs = card.getAttribute('data-tech').split(',');
+    
+    // Check current language for Role and Description
+    const desc = currentLang === 'id' && card.hasAttribute('data-id-desc') ? card.getAttribute('data-id-desc') : card.getAttribute('data-desc');
+    const role = currentLang === 'id' && card.hasAttribute('data-id-role') ? card.getAttribute('data-id-role') : card.getAttribute('data-role');
 
     modalTitle.textContent = title;
+    modalRole.textContent = role ? role : ''; 
     modalDesc.textContent = desc;
     modalImage.src = image;
     
