@@ -13,8 +13,8 @@ const translations = {
         nav_projects_mobile: "Projects",
         nav_engineering_mobile: "Engineering",
         nav_contact_mobile: "Contact",
-        hero_hello: "Hi, my name is",
-        hero_title: "Backend Developer",
+        hero_hello: "> whoami",
+        hero_title: "< Backend Developer />",
         hero_desc: "Backend Developer with 4+ years experience building database-driven applications and APIs.",
         hero_btn_projects: "View Projects",
         hero_btn_contact: "Contact Me",
@@ -36,6 +36,7 @@ const translations = {
         contact_title: "Get In Touch",
         contact_phone: "Phone",
         contact_btn: "Send Email",
+        modal_btn_visit: "Visit Website",
         footer_copy: "Copyright"
     },
     id: {
@@ -51,8 +52,8 @@ const translations = {
         nav_projects_mobile: "Proyek",
         nav_engineering_mobile: "Engineering",
         nav_contact_mobile: "Kontak",
-        hero_hello: "Halo, nama saya",
-        hero_title: "Backend Developer",
+        hero_hello: "> whoami",
+        hero_title: "< Backend Developer />",
         hero_desc: "Backend Developer dengan spesialisasi lebih dari 4 tahun membangun aplikasi dan API berbasis database.",
         hero_btn_projects: "Lihat Proyek",
         hero_btn_contact: "Hubungi Saya",
@@ -74,6 +75,7 @@ const translations = {
         contact_title: "Hubungi Saya",
         contact_phone: "Telepon",
         contact_btn: "Kirim Email",
+        modal_btn_visit: "Kunjungi Situs",
         footer_copy: "Hak Cipta"
     }
 };

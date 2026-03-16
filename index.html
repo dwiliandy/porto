@@ -12,10 +12,10 @@
             darkMode: 'class',
             theme: {
                 extend: {
-                    fontFamily: { sans: ['Inter', 'sans-serif'], mono: ['JetBrains Mono', 'monospace'] },
+                    fontFamily: { sans: ['JetBrains Mono', 'monospace'], mono: ['JetBrains Mono', 'monospace'] },
                     colors: {
-                        accent: '#10b981', bgDark: '#0f172a', bgDarker: '#020617',
-                        cardDark: '#1e293b', textPrimary: '#f1f5f9', textSecondary: '#94a3b8',
+                        accent: '#00ff41', bgDark: '#0d1117', bgDarker: '#010409',
+                        cardDark: '#161b22', textPrimary: '#c9d1d9', textSecondary: '#8b949e',
                     }
                 }
             }
@@ -23,19 +23,19 @@
     </script>
     <script src="https://unpkg.com/lucide@latest"></script>
 </head>
-<body class="bg-bgDarker text-textPrimary font-sans overflow-x-hidden selection:bg-accent selection:text-white">
+<body class="bg-bgDarker text-textPrimary font-mono overflow-x-hidden selection:bg-accent selection:text-bgDarker">
 
     <nav class="glass-nav fixed w-full z-50 top-0 transition-all duration-300">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-20">
                 <div class="font-mono font-bold text-xl"><a href="#home" class="text-white">&lt;Dwiliandi<span class="text-accent">/</span>&gt;</a></div>
                 <div class="hidden md:flex space-x-8 font-mono text-sm">
-                    <a href="#about" class="nav-link text-textSecondary hover:text-accent transition-colors"><span class="text-accent">01.</span> <span data-i18n="nav_about">About</span></a>
-                    <a href="#tech-stack" class="nav-link text-textSecondary hover:text-accent transition-colors"><span class="text-accent">02.</span> <span data-i18n="nav_tech_stack">Tech Stack</span></a>
-                    <a href="#experience" class="nav-link text-textSecondary hover:text-accent transition-colors"><span class="text-accent">03.</span> <span data-i18n="nav_experience">Experience</span></a>
-                    <a href="#projects" class="nav-link text-textSecondary hover:text-accent transition-colors"><span class="text-accent">04.</span> <span data-i18n="nav_projects">Projects</span></a>
-                    <a href="#engineering" class="nav-link text-textSecondary hover:text-accent transition-colors"><span class="text-accent">05.</span> <span data-i18n="nav_engineering">Engineering</span></a>
-                    <a href="#contact" class="nav-link text-textSecondary hover:text-accent transition-colors"><span class="text-accent">06.</span> <span data-i18n="nav_contact">Contact</span></a>
+                    <a href="#about" class="nav-link text-textSecondary hover:text-accent transition-colors"><span class="text-accent">~/01</span> <span data-i18n="nav_about">About</span></a>
+                    <a href="#tech-stack" class="nav-link text-textSecondary hover:text-accent transition-colors"><span class="text-accent">~/02</span> <span data-i18n="nav_tech_stack">Tech Stack</span></a>
+                    <a href="#experience" class="nav-link text-textSecondary hover:text-accent transition-colors"><span class="text-accent">~/03</span> <span data-i18n="nav_experience">Experience</span></a>
+                    <a href="#projects" class="nav-link text-textSecondary hover:text-accent transition-colors"><span class="text-accent">~/04</span> <span data-i18n="nav_projects">Projects</span></a>
+                    <a href="#engineering" class="nav-link text-textSecondary hover:text-accent transition-colors"><span class="text-accent">~/05</span> <span data-i18n="nav_engineering">Engineering</span></a>
+                    <a href="#contact" class="nav-link text-textSecondary hover:text-accent transition-colors"><span class="text-accent">~/06</span> <span data-i18n="nav_contact">Contact</span></a>
                 </div>
                 <!-- Language Toggle -->
                 <div class="hidden md:flex items-center">
@@ -55,21 +55,21 @@
         </div>
         <div id="mobile-menu" class="hidden md:hidden bg-cardDark border-t border-gray-800 absolute w-full left-0 top-20 shadow-xl">
             <div class="px-4 py-2 space-y-1 font-mono text-sm">
-                <a href="#about" class="mobile-link block px-3 py-3 text-textSecondary hover:text-accent">01. <span data-i18n="nav_about_mobile">About</span></a>
-                <a href="#tech-stack" class="mobile-link block px-3 py-3 text-textSecondary hover:text-accent">02. <span data-i18n="nav_tech_stack_mobile">Tech Stack</span></a>
-                <a href="#experience" class="mobile-link block px-3 py-3 text-textSecondary hover:text-accent">03. <span data-i18n="nav_experience_mobile">Experience</span></a>
-                <a href="#projects" class="mobile-link block px-3 py-3 text-textSecondary hover:text-accent">04. <span data-i18n="nav_projects_mobile">Projects</span></a>
-                <a href="#engineering" class="mobile-link block px-3 py-3 text-textSecondary hover:text-accent">05. <span data-i18n="nav_engineering_mobile">Engineering</span></a>
-                <a href="#contact" class="mobile-link block px-3 py-3 text-textSecondary hover:text-accent">06. <span data-i18n="nav_contact_mobile">Contact</span></a>
+                <a href="#about" class="mobile-link block px-3 py-3 text-textSecondary hover:text-accent">~/01 <span data-i18n="nav_about_mobile">About</span></a>
+                <a href="#tech-stack" class="mobile-link block px-3 py-3 text-textSecondary hover:text-accent">~/02 <span data-i18n="nav_tech_stack_mobile">Tech Stack</span></a>
+                <a href="#experience" class="mobile-link block px-3 py-3 text-textSecondary hover:text-accent">~/03 <span data-i18n="nav_experience_mobile">Experience</span></a>
+                <a href="#projects" class="mobile-link block px-3 py-3 text-textSecondary hover:text-accent">~/04 <span data-i18n="nav_projects_mobile">Projects</span></a>
+                <a href="#engineering" class="mobile-link block px-3 py-3 text-textSecondary hover:text-accent">~/05 <span data-i18n="nav_engineering_mobile">Engineering</span></a>
+                <a href="#contact" class="mobile-link block px-3 py-3 text-textSecondary hover:text-accent">~/06 <span data-i18n="nav_contact_mobile">Contact</span></a>
             </div>
         </div>
     </nav>
 
     <section id="home" class="min-h-screen flex items-center justify-center pt-20 relative animate-on-scroll">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <p class="font-mono text-accent mb-5 text-sm md:text-base" data-i18n="hero_hello">Hi, my name is</p>
-            <h1 class="text-5xl md:text-7xl font-bold text-white mb-2">Dwiliandi Omega.</h1>
-            <h2 class="text-3xl md:text-5xl font-bold text-gray-400 mb-6" data-i18n="hero_title">Backend Developer</h2>
+            <p class="font-mono text-accent mb-5 text-sm md:text-base" data-i18n="hero_hello">> whoami</p>
+            <h1 class="text-5xl md:text-7xl font-bold text-white mb-2 tracking-tight glow-text">Dwiliandi Omega<span class="text-accent animate-pulse">_</span></h1>
+            <h2 class="text-3xl md:text-5xl font-bold text-gray-400 mb-6 font-mono opacity-80" data-i18n="hero_title">&lt; Backend Developer /&gt;</h2>
             <p class="max-w-2xl mx-auto text-lg md:text-xl text-textSecondary leading-relaxed mb-12" data-i18n="hero_desc">
                 Backend Developer with 4+ years experience building database-driven applications and APIs.
             </p>
@@ -83,7 +83,7 @@
     <section id="about" class="py-24 bg-bgDark">
         <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 animate-on-scroll">
             <div class="flex items-center gap-4 mb-10">
-                <h2 class="text-2xl md:text-3xl font-bold text-white"><span class="text-accent font-mono text-xl mr-2">01.</span> <span data-i18n="about_title">About Me</span></h2>
+                <h2 class="text-2xl md:text-3xl font-bold text-white"><span class="text-accent font-mono text-xl mr-2">~/01</span> <span data-i18n="about_title">About Me</span></h2>
                 <div class="h-px bg-gray-800 flex-grow"></div>
             </div>
             <div class="glass-card rounded-xl p-8 md:p-10">
@@ -97,7 +97,7 @@
     <section id="tech-stack" class="py-24 bg-bgDarker">
         <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 animate-on-scroll">
             <div class="flex items-center gap-4 mb-12">
-                <h2 class="text-2xl md:text-3xl font-bold text-white"><span class="text-accent font-mono text-xl mr-2">02.</span> Tech Stack</h2>
+                <h2 class="text-2xl md:text-3xl font-bold text-white"><span class="text-accent font-mono text-xl mr-2">~/02</span> Tech Stack</h2>
                 <div class="h-px bg-gray-800 flex-grow"></div>
             </div>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -106,10 +106,10 @@
                     <div class="w-12 h-12 rounded-lg bg-accent/10 flex items-center justify-center text-accent mb-6"><i data-lucide="server"></i></div>
                     <h3 class="text-lg font-bold mb-4 text-white">Backend</h3>
                     <div class="flex flex-wrap gap-2">
-                        <span class="tech-badge px-3 py-1.5 rounded text-sm font-mono">PHP</span>
                         <span class="tech-badge px-3 py-1.5 rounded text-sm font-mono">Laravel</span>
-                        <span class="tech-badge px-3 py-1.5 rounded text-sm font-mono">Ruby</span>
                         <span class="tech-badge px-3 py-1.5 rounded text-sm font-mono">Ruby on Rails</span>
+                        <span class="tech-badge px-3 py-1.5 rounded text-sm font-mono">Livewire</span>
+                        <span class="tech-badge px-3 py-1.5 rounded text-sm font-mono">REST API</span>
                     </div>
                 </div>
                 <!-- Database -->
@@ -118,7 +118,7 @@
                     <h3 class="text-lg font-bold mb-4 text-white">Database</h3>
                     <div class="flex flex-wrap gap-2">
                         <span class="tech-badge px-3 py-1.5 rounded text-sm font-mono">MySQL</span>
-                        <span class="tech-badge px-3 py-1.5 rounded text-sm font-mono">Database Optimization</span>
+                        <span class="tech-badge px-3 py-1.5 rounded text-sm font-mono">PostgreSQL</span>
                     </div>
                 </div>
                 <!-- Tools -->
@@ -126,20 +126,22 @@
                     <div class="w-12 h-12 rounded-lg bg-purple-500/10 flex items-center justify-center text-purple-500 mb-6"><i data-lucide="terminal"></i></div>
                     <h3 class="text-lg font-bold mb-4 text-white">Tools</h3>
                     <div class="flex flex-wrap gap-2">
+                        <span class="tech-badge px-3 py-1.5 rounded text-sm font-mono">Linux</span>
                         <span class="tech-badge px-3 py-1.5 rounded text-sm font-mono">Git</span>
                         <span class="tech-badge px-3 py-1.5 rounded text-sm font-mono">Github</span>
-                        <span class="tech-badge px-3 py-1.5 rounded text-sm font-mono">Linux</span>
+                        <span class="tech-badge px-3 py-1.5 rounded text-sm font-mono">Postman</span>
                     </div>
                 </div>
                 <!-- Frontend -->
                 <div class="glass-card rounded-xl p-6 hover:-translate-y-2 transition-transform duration-300">
                     <div class="w-12 h-12 rounded-lg bg-orange-500/10 flex items-center justify-center text-orange-500 mb-6"><i data-lucide="layout"></i></div>
-                    <h3 class="text-lg font-bold mb-4 text-white">Frontend Basic</h3>
+                    <h3 class="text-lg font-bold mb-4 text-white">Frontend</h3>
                     <div class="flex flex-wrap gap-2">
                         <span class="tech-badge px-3 py-1.5 rounded text-sm font-mono">HTML</span>
                         <span class="tech-badge px-3 py-1.5 rounded text-sm font-mono">CSS</span>
-                        <span class="tech-badge px-3 py-1.5 rounded text-sm font-mono">Tailwind</span>
-                        <span class="tech-badge px-3 py-1.5 rounded text-sm font-mono">Javascript</span>
+                        <span class="tech-badge px-3 py-1.5 rounded text-sm font-mono">JS</span>
+                        <span class="tech-badge px-3 py-1.5 rounded text-sm font-mono">Ajax</span>
+                        <span class="tech-badge px-3 py-1.5 rounded text-sm font-mono">Datatable</span>
                     </div>
                 </div>
             </div>
@@ -149,7 +151,7 @@
     <section id="experience" class="py-24 bg-bgDark">
         <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 animate-on-scroll">
             <div class="flex items-center gap-4 mb-12">
-                <h2 class="text-2xl md:text-3xl font-bold text-white"><span class="text-accent font-mono text-xl mr-2">03.</span> <span data-i18n="experience_title">Experience</span></h2>
+                <h2 class="text-2xl md:text-3xl font-bold text-white"><span class="text-accent font-mono text-xl mr-2">~/03</span> <span data-i18n="experience_title">Experience</span></h2>
                 <div class="h-px bg-gray-800 flex-grow"></div>
             </div>
             <div class="glass-card rounded-xl p-8 border-l-4 border-l-accent border-t-0 border-r-0 border-b-0">
@@ -175,14 +177,14 @@
     <section id="projects" class="py-24 bg-bgDarker">
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 animate-on-scroll">
             <div class="flex items-center gap-4 mb-12">
-                <h2 class="text-2xl md:text-3xl font-bold text-white"><span class="text-accent font-mono text-xl mr-2">04.</span> <span data-i18n="projects_title">Projects</span></h2>
+                <h2 class="text-2xl md:text-3xl font-bold text-white"><span class="text-accent font-mono text-xl mr-2">~/04</span> <span data-i18n="projects_title">Projects</span></h2>
                 <div class="h-px bg-gray-800 flex-grow"></div>
             </div>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <!-- Project 1: ESS -->
-                <div class="glass-card rounded-xl overflow-hidden group flex flex-col h-full hover:-translate-y-2 transition-transform duration-300 cursor-pointer project-card" data-title="ESS (Employee Self Service)" data-desc="A comprehensive Human Resources platform for employees to manage their own attendance, leave requests, and personal information." data-id-desc="Platform Human Resources komprehensif untuk karyawan dalam mengelola kehadiran, permintaan cuti, dan informasi pribadi." data-image="https://images.unsplash.com/photo-1542626991-cbc4e32524cc?auto=format&fit=crop&q=80&w=800" data-tech="Laravel, MySQL, JS, Ajax, Datatable" data-role="Backend Developer" data-id-role="Backend Developer">
+                <div class="glass-card rounded-xl overflow-hidden group flex flex-col h-full hover:-translate-y-2 transition-transform duration-300 cursor-pointer project-card" data-title="ESS (Employee Self Service)" data-desc="A comprehensive Human Resources platform for employees to manage their own attendance, leave requests, and personal information." data-id-desc="Platform Human Resources komprehensif untuk karyawan dalam mengelola kehadiran, permintaan cuti, dan informasi pribadi." data-image="images/ess.png" data-tech="Laravel, MySQL, JS, Ajax, Datatable" data-role="Backend Developer" data-id-role="Backend Developer">
                     <div class="relative h-48 overflow-hidden bg-bgDark">
-                        <img src="https://images.unsplash.com/photo-1542626991-cbc4e32524cc?auto=format&fit=crop&q=80&w=800" alt="Employee Self Service" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500 group-hover:scale-110 opacity-60 group-hover:opacity-100">
+                        <img src="images/ess.png" alt="Employee Self Service" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500 group-hover:scale-110 opacity-60 group-hover:opacity-100">
                         <div class="absolute inset-0 bg-accent/20 mix-blend-multiply group-hover:opacity-0 transition-opacity"></div>
                     </div>
                     <div class="p-8 flex flex-col flex-grow">
@@ -195,10 +197,9 @@
                     </div>
                 </div>
                 
-                <!-- Project 2: Oharalibrary.xyz -->
-                <div class="glass-card rounded-xl overflow-hidden group flex flex-col h-full hover:-translate-y-2 transition-transform duration-300 cursor-pointer project-card" data-title="Oharalibrary.xyz" data-desc="A wiki and comprehensive guide system for a Telegram bot game. Powered by a robust backend API." data-id-desc="Sistem panduan dan wiki komprehensif untuk game Telegram bot. Ditenagai oleh backend API yang tangguh." data-image="https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&q=80&w=800" data-tech="Laravel, MySQL, Ajax, Datatable, Python, Telethon, REST API" data-role="Fullstack Developer & API Designer" data-id-role="Fullstack Developer & API Designer">
+                <div class="glass-card rounded-xl overflow-hidden group flex flex-col h-full hover:-translate-y-2 transition-transform duration-300 cursor-pointer project-card" data-title="Oharalibrary.xyz" data-desc="A wiki and comprehensive guide system for a Telegram bot game. Powered by a robust backend API." data-id-desc="Sistem panduan dan wiki komprehensif untuk game Telegram bot. Ditenagai oleh backend API yang tangguh." data-url="https://www.oharalibrary.xyz/" data-image="images/ohara.png" data-tech="Laravel, MySQL, Ajax, Datatable, Python, Telethon, REST API" data-role="Fullstack Developer & API Designer" data-id-role="Fullstack Developer & API Designer">
                     <div class="relative h-48 overflow-hidden bg-bgDark">
-                        <img src="https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&q=80&w=800" alt="Oharalibrary.xyz" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500 group-hover:scale-110 opacity-60 group-hover:opacity-100">
+                        <img src="images/ohara.png" alt="Oharalibrary.xyz" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500 group-hover:scale-110 opacity-60 group-hover:opacity-100">
                         <div class="absolute inset-0 bg-accent/20 mix-blend-multiply group-hover:opacity-0 transition-opacity"></div>
                     </div>
                     <div class="p-8 flex flex-col flex-grow">
@@ -281,7 +282,7 @@
     <section id="engineering" class="py-24 bg-bgDark">
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 animate-on-scroll">
             <div class="flex items-center gap-4 mb-8">
-                <h2 class="text-2xl md:text-3xl font-bold text-white"><span class="text-accent font-mono text-xl mr-2">05.</span> <span data-i18n="engineering_title">Engineering Experience</span></h2>
+                <h2 class="text-2xl md:text-3xl font-bold text-white"><span class="text-accent font-mono text-xl mr-2">~/05</span> <span data-i18n="engineering_title">Engineering Experience</span></h2>
                 <div class="h-px bg-gray-800 flex-grow"></div>
             </div>
             
@@ -420,7 +421,7 @@
 
     <section id="contact" class="py-32 bg-bgDark text-center animate-on-scroll">
         <div class="max-w-2xl mx-auto px-4">
-            <p class="font-mono text-accent mb-4"><span class="mr-2">06.</span><span data-i18n="contact_subtitle">What's Next?</span></p>
+            <p class="font-mono text-accent mb-4"><span class="mr-2">~/06</span><span data-i18n="contact_subtitle">What's Next?</span></p>
             <h2 class="text-4xl md:text-5xl font-bold text-white mb-10" data-i18n="contact_title">Get In Touch</h2>
             <div class="glass-card rounded-xl p-8 mb-12 flex flex-col sm:flex-row items-center justify-center gap-8">
                 <div class="flex items-center group cursor-pointer w-full md:w-auto justify-center">
@@ -475,6 +476,11 @@
                 <p id="modal-desc" class="text-textSecondary text-lg mb-8 leading-relaxed flex-grow">Project Description goes here.</p>
                 
                 <div class="mt-auto">
+                    <div class="flex flex-wrap gap-4 items-center mb-4">
+                        <a id="modal-url-btn" href="#" target="_blank" class="hidden px-4 py-2 bg-accent/10 border border-accent text-accent rounded font-mono text-sm hover:bg-accent hover:text-bgDarker transition-colors items-center gap-2">
+                            <i data-lucide="external-link" class="w-4 h-4"></i> <span data-i18n="modal_btn_visit">Visit Website</span>
+                        </a>
+                    </div>
                     <h4 class="text-sm font-bold text-white mb-4 uppercase tracking-wider font-mono flex items-center gap-2">
                         <i data-lucide="code" class="w-4 h-4 text-accent"></i> Tech Stack
                     </h4>

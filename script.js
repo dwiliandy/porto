@@ -82,6 +82,7 @@ const modalTitle = document.getElementById('modal-title');
 const modalRole = document.getElementById('modal-role');
 const modalDesc = document.getElementById('modal-desc');
 const modalTech = document.getElementById('modal-tech');
+const modalUrlBtn = document.getElementById('modal-url-btn');
 
 function openModal(card) {
     const title = card.getAttribute('data-title');
@@ -96,6 +97,17 @@ function openModal(card) {
     modalRole.textContent = role ? role : ''; 
     modalDesc.textContent = desc;
     modalImage.src = image;
+    
+    // Toggle Web URL Button
+    const url = card.getAttribute('data-url');
+    if (url) {
+        modalUrlBtn.href = url;
+        modalUrlBtn.classList.remove('hidden');
+        modalUrlBtn.classList.add('inline-flex');
+    } else {
+        modalUrlBtn.classList.add('hidden');
+        modalUrlBtn.classList.remove('inline-flex');
+    }
     
     // Clear previous tech badges
     modalTech.innerHTML = '';
