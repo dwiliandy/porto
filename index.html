@@ -14,11 +14,23 @@
                 extend: {
                     fontFamily: { sans: ['JetBrains Mono', 'monospace'], mono: ['JetBrains Mono', 'monospace'] },
                     colors: {
-                        accent: '#00ff41', bgDark: '#0d1117', bgDarker: '#010409',
-                        cardDark: '#161b22', textPrimary: '#c9d1d9', textSecondary: '#8b949e',
+                        accent: 'var(--accent)',
+                        bgDark: 'var(--bg-dark)',
+                        bgDarker: 'var(--bg-darker)',
+                        cardDark: 'var(--card-dark)',
+                        textPrimary: 'var(--text-primary)',
+                        textSecondary: 'var(--text-secondary)',
                     }
                 }
             }
+        }
+    </script>
+    <script>
+        // Check local storage for theme
+        if (localStorage.getItem('theme') === 'light' || (!('theme' in localStorage) && !window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            document.documentElement.classList.remove('dark');
+        } else {
+            document.documentElement.classList.add('dark');
         }
     </script>
     <script src="https://unpkg.com/lucide@latest"></script>
@@ -28,7 +40,7 @@
     <nav class="glass-nav fixed w-full z-50 top-0 transition-all duration-300">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-20">
-                <div class="font-mono font-bold text-xl"><a href="#home" class="text-white">&lt;Dwiliandi<span class="text-accent">/</span>&gt;</a></div>
+                <div class="font-mono font-bold text-xl"><a href="#home" class="text-textPrimary">&lt;Dwiliandi<span class="text-accent">/</span>&gt;</a></div>
                 <div class="hidden md:flex space-x-8 font-mono text-sm">
                     <a href="#about" class="nav-link text-textSecondary hover:text-accent transition-colors"><span class="text-accent">~/01</span> <span data-i18n="nav_about">About</span></a>
                     <a href="#tech-stack" class="nav-link text-textSecondary hover:text-accent transition-colors"><span class="text-accent">~/02</span> <span data-i18n="nav_tech_stack">Tech Stack</span></a>
@@ -38,18 +50,27 @@
                     <a href="#contact" class="nav-link text-textSecondary hover:text-accent transition-colors"><span class="text-accent">~/06</span> <span data-i18n="nav_contact">Contact</span></a>
                 </div>
                 <!-- Language Toggle -->
-                <div class="hidden md:flex items-center">
+                <div class="hidden md:flex items-center gap-4">
                     <button id="lang-toggle" class="px-3 py-1.5 rounded border border-accent text-accent font-mono text-xs hover:bg-accent/10 transition-colors flex items-center gap-2">
                         <img src="https://flagcdn.com/w20/us.png" alt="EN Flag" class="w-4 h-3 object-cover rounded-sm lang-flag">
                         <span class="lang-text">EN</span>
                     </button>
+                    <!-- Theme Toggle -->
+                    <button id="theme-toggle" class="p-2 rounded-full text-textSecondary hover:text-accent hover:bg-accent/10 transition-colors">
+                        <i data-lucide="moon" class="w-5 h-5 dark:hidden"></i>
+                        <i data-lucide="sun" class="w-5 h-5 hidden dark:block"></i>
+                    </button>
                 </div>
                 <div class="md:hidden flex items-center gap-4">
+                    <button id="theme-toggle-mobile" class="p-2 rounded-full text-textSecondary hover:text-accent hover:bg-accent/10 transition-colors">
+                        <i data-lucide="moon" class="w-5 h-5 dark:hidden"></i>
+                        <i data-lucide="sun" class="w-5 h-5 hidden dark:block"></i>
+                    </button>
                     <button id="lang-toggle-mobile" class="px-3 py-1.5 rounded border border-accent text-accent font-mono text-xs hover:bg-accent/10 transition-colors flex items-center gap-2">
                         <img src="https://flagcdn.com/w20/us.png" alt="EN Flag" class="w-4 h-3 object-cover rounded-sm lang-flag">
                         <span class="lang-text">EN</span>
                     </button>
-                    <button id="menu-toggle" class="text-textSecondary hover:text-white"><i data-lucide="menu"></i></button>
+                    <button id="menu-toggle" class="text-textSecondary hover:text-textPrimary"><i data-lucide="menu"></i></button>
                 </div>
             </div>
         </div>
@@ -68,8 +89,8 @@
     <section id="home" class="min-h-screen flex items-center justify-center pt-20 relative animate-on-scroll">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <p class="font-mono text-accent mb-5 text-sm md:text-base" data-i18n="hero_hello">> whoami</p>
-            <h1 class="text-5xl md:text-7xl font-bold text-white mb-2 tracking-tight glow-text">Dwiliandi Omega<span class="text-accent animate-pulse">_</span></h1>
-            <h2 class="text-3xl md:text-5xl font-bold text-gray-400 mb-6 font-mono opacity-80" data-i18n="hero_title">&lt; Backend Developer /&gt;</h2>
+            <h1 class="text-5xl md:text-7xl font-bold text-textPrimary mb-2 tracking-tight glow-text">Dwiliandi Omega<span class="text-accent animate-pulse">_</span></h1>
+            <h2 class="text-3xl md:text-5xl font-bold text-textSecondary mb-6 font-mono opacity-80" data-i18n="hero_title">&lt; Backend Developer /&gt;</h2>
             <p class="max-w-2xl mx-auto text-lg md:text-xl text-textSecondary leading-relaxed mb-12" data-i18n="hero_desc">
                 Backend Developer with 4+ years experience building database-driven applications and APIs.
             </p>
@@ -83,7 +104,7 @@
     <section id="about" class="py-24 bg-bgDark">
         <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 animate-on-scroll">
             <div class="flex items-center gap-4 mb-10">
-                <h2 class="text-2xl md:text-3xl font-bold text-white"><span class="text-accent font-mono text-xl mr-2">~/01</span> <span data-i18n="about_title">About Me</span></h2>
+                <h2 class="text-2xl md:text-3xl font-bold text-textPrimary"><span class="text-accent font-mono text-xl mr-2">~/01</span> <span data-i18n="about_title">About Me</span></h2>
                 <div class="h-px bg-gray-800 flex-grow"></div>
             </div>
             <div class="glass-card rounded-xl p-8 md:p-10">
@@ -97,7 +118,7 @@
     <section id="tech-stack" class="py-24 bg-bgDarker">
         <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 animate-on-scroll">
             <div class="flex items-center gap-4 mb-12">
-                <h2 class="text-2xl md:text-3xl font-bold text-white"><span class="text-accent font-mono text-xl mr-2">~/02</span> Tech Stack</h2>
+                <h2 class="text-2xl md:text-3xl font-bold text-textPrimary"><span class="text-accent font-mono text-xl mr-2">~/02</span> Tech Stack</h2>
                 <div class="h-px bg-gray-800 flex-grow"></div>
             </div>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -151,18 +172,18 @@
     <section id="experience" class="py-24 bg-bgDark">
         <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 animate-on-scroll">
             <div class="flex items-center gap-4 mb-12">
-                <h2 class="text-2xl md:text-3xl font-bold text-white"><span class="text-accent font-mono text-xl mr-2">~/03</span> <span data-i18n="experience_title">Experience</span></h2>
+                <h2 class="text-2xl md:text-3xl font-bold text-textPrimary"><span class="text-accent font-mono text-xl mr-2">~/03</span> <span data-i18n="experience_title">Experience</span></h2>
                 <div class="h-px bg-gray-800 flex-grow"></div>
             </div>
             <div class="glass-card rounded-xl p-8 border-l-4 border-l-accent border-t-0 border-r-0 border-b-0">
                 <div class="flex flex-col md:flex-row md:justify-between md:items-start mb-6 gap-2">
                     <div>
-                        <h3 class="text-2xl font-bold text-white">Web Developer</h3>
+                        <h3 class="text-2xl font-bold text-textPrimary">Web Developer</h3>
                         <p class="text-lg text-accent mt-1">PT Mitra Konsultan</p>
                     </div>
                     <p class="font-mono text-textSecondary text-sm bg-bgDarker px-3 py-1 rounded">2021 - Present</p>
                 </div>
-                <p class="text-white font-semibold mb-4 text-sm tracking-wide uppercase" data-i18n="experience_resp">Responsibilities:</p>
+                <p class="text-textPrimary font-semibold mb-4 text-sm tracking-wide uppercase" data-i18n="experience_resp">Responsibilities:</p>
                 <ul class="space-y-4 text-textSecondary">
                     <li class="flex items-start"><i data-lucide="check-square" class="w-5 h-5 text-accent mr-4 mt-0.5"></i><span data-i18n="experience_resp_1">Develop backend services and REST APIs</span></li>
                     <li class="flex items-start"><i data-lucide="check-square" class="w-5 h-5 text-accent mr-4 mt-0.5"></i><span data-i18n="experience_resp_2">Design and optimize database structures</span></li>
@@ -177,102 +198,114 @@
     <section id="projects" class="py-24 bg-bgDarker">
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 animate-on-scroll">
             <div class="flex items-center gap-4 mb-12">
-                <h2 class="text-2xl md:text-3xl font-bold text-white"><span class="text-accent font-mono text-xl mr-2">~/04</span> <span data-i18n="projects_title">Projects</span></h2>
+                <h2 class="text-2xl md:text-3xl font-bold text-textPrimary"><span class="text-accent font-mono text-xl mr-2">~/04</span> <span data-i18n="projects_title">Projects</span></h2>
                 <div class="h-px bg-gray-800 flex-grow"></div>
             </div>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <!-- Project 1: ESS -->
-                <div class="glass-card rounded-xl overflow-hidden group flex flex-col h-full hover:-translate-y-2 transition-transform duration-300 cursor-pointer project-card" data-title="ESS (Employee Self Service)" data-desc="A comprehensive Human Resources platform for employees to manage their own attendance, leave requests, and personal information." data-id-desc="Platform Human Resources komprehensif untuk karyawan dalam mengelola kehadiran, permintaan cuti, dan informasi pribadi." data-image="images/ess.png" data-tech="Laravel, MySQL, JS, Ajax, Datatable" data-role="Backend Developer" data-id-role="Backend Developer">
+                <div class="glass-card rounded-xl overflow-hidden group flex flex-col h-full hover:-translate-y-2 transition-transform duration-300 cursor-pointer project-card" data-title="ESS (Employee Self Service)" data-desc="Developed an attendance and human resources API. Reduced HR handling time by automating timesheets, workflows, and approval systems." data-id-desc="Mengembangkan API manajemen absensi & SDM. Mengurangi waktu operasional HR dengan otomatisasi timesheet, workflow, dan persetujuan." data-image="images/ess.png" data-tech="Laravel, MySQL, JS, Ajax, Datatable" data-role="Backend Developer" data-id-role="Backend Developer">
                     <div class="relative h-48 overflow-hidden bg-bgDark">
                         <img src="images/ess.png" alt="Employee Self Service" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500 group-hover:scale-110 opacity-60 group-hover:opacity-100">
-                        <div class="absolute inset-0 bg-accent/20 mix-blend-multiply group-hover:opacity-0 transition-opacity"></div>
+                        <div class="absolute inset-0 bg-bgDarker/80 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                            <span class="px-4 py-2 border border-accent text-accent rounded font-mono text-sm bg-bgDarker/50">View Details</span>
+                        </div>
                     </div>
                     <div class="p-8 flex flex-col flex-grow">
                         <div class="flex justify-between items-start mb-6">
                             <i data-lucide="users" class="w-8 h-8 text-accent"></i>
                             <i data-lucide="external-link" class="w-5 h-5 text-textSecondary opacity-0 group-hover:opacity-100 transition-opacity duration-300"></i>
                         </div>
-                        <h3 class="text-xl font-bold text-white mb-3 group-hover:text-accent transition-colors">ESS (Employee Self Service)</h3>
-                        <p class="text-textSecondary text-sm mb-6 flex-grow project-desc">A comprehensive Human Resources platform for employees to manage their own attendance, leave requests, and personal information.</p>
+                        <h3 class="text-xl font-bold text-textPrimary mb-3 group-hover:text-accent transition-colors">ESS (Employee Self Service)</h3>
+                        <p class="text-textSecondary text-sm mb-6 flex-grow project-desc">Developed an attendance and human resources API. Reduced HR handling time by automating timesheets, workflows, and approval systems.</p>
                     </div>
                 </div>
                 
-                <div class="glass-card rounded-xl overflow-hidden group flex flex-col h-full hover:-translate-y-2 transition-transform duration-300 cursor-pointer project-card" data-title="Oharalibrary.xyz" data-desc="A wiki and comprehensive guide system for a Telegram bot game. Powered by a robust backend API." data-id-desc="Sistem panduan dan wiki komprehensif untuk game Telegram bot. Ditenagai oleh backend API yang tangguh." data-url="https://www.oharalibrary.xyz/" data-image="images/ohara.png" data-tech="Laravel, MySQL, Ajax, Datatable, Python, Telethon, REST API" data-role="Fullstack Developer & API Designer" data-id-role="Fullstack Developer & API Designer">
+                <div class="glass-card rounded-xl overflow-hidden group flex flex-col h-full hover:-translate-y-2 transition-transform duration-300 cursor-pointer project-card" data-title="Oharalibrary.xyz" data-desc="Architected a Telegram bot backend and web wiki. Implemented efficient scrapers and RESTful endpoints for seamless game integration." data-id-desc="Merancang backend bot Telegram dan web wiki. Mengimplementasikan scraper efisien dan endpoint RESTful untuk integrasi game yang lancar." data-url="https://www.oharalibrary.xyz/" data-image="images/ohara.png" data-tech="Laravel, MySQL, Ajax, Datatable, Python, Telethon, REST API" data-role="Fullstack Developer & API Designer" data-id-role="Fullstack Developer & API Designer">
                     <div class="relative h-48 overflow-hidden bg-bgDark">
                         <img src="images/ohara.png" alt="Oharalibrary.xyz" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500 group-hover:scale-110 opacity-60 group-hover:opacity-100">
-                        <div class="absolute inset-0 bg-accent/20 mix-blend-multiply group-hover:opacity-0 transition-opacity"></div>
+                        <div class="absolute inset-0 bg-bgDarker/80 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                            <span class="px-4 py-2 border border-accent text-accent rounded font-mono text-sm bg-bgDarker/50">View Details</span>
+                        </div>
                     </div>
                     <div class="p-8 flex flex-col flex-grow">
                         <div class="flex justify-between items-start mb-6">
                             <i data-lucide="book-open" class="w-8 h-8 text-accent"></i>
                             <i data-lucide="external-link" class="w-5 h-5 text-textSecondary opacity-0 group-hover:opacity-100 transition-opacity duration-300"></i>
                         </div>
-                        <h3 class="text-xl font-bold text-white mb-3 group-hover:text-accent transition-colors">Oharalibrary.xyz</h3>
-                        <p class="text-textSecondary text-sm mb-6 flex-grow project-desc">A wiki and comprehensive guide system for a Telegram bot game. Powered by a robust backend API.</p>
+                        <h3 class="text-xl font-bold text-textPrimary mb-3 group-hover:text-accent transition-colors">Oharalibrary.xyz</h3>
+                        <p class="text-textSecondary text-sm mb-6 flex-grow project-desc">Architected a Telegram bot backend and web wiki. Implemented efficient scrapers and RESTful endpoints for seamless game integration.</p>
                     </div>
                 </div>
                 
                 <!-- Project 3: Website Undangan -->
-                <div class="glass-card rounded-xl overflow-hidden group flex flex-col h-full hover:-translate-y-2 transition-transform duration-300 cursor-pointer project-card" data-title="Website Undangan Digital" data-desc="A digital invitation platform allowing users to generate, customize, and distribute event invitations easily." data-id-desc="Platform undangan digital yang memungkinkan pengguna untuk membuat, menyesuaikan, dan membagikan undangan acara dengan mudah." data-image="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&q=80&w=800" data-tech="HTML, JS, SQL" data-role="Web Developer" data-id-role="Web Developer">
+                <div class="glass-card rounded-xl overflow-hidden group flex flex-col h-full hover:-translate-y-2 transition-transform duration-300 cursor-pointer project-card" data-title="Website Undangan Digital" data-desc="Built a dynamic digital invitation platform. Engineered customizable features allowing users to efficiently generate and distribute event invitations." data-id-desc="Membuat platform undangan digital dinamis. Merancang fitur yang dapat disesuaikan pengguna untuk efisiensi distribusi undangan digital." data-image="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&q=80&w=800" data-tech="HTML, JS, SQL" data-role="Web Developer" data-id-role="Web Developer">
                     <div class="relative h-48 overflow-hidden bg-bgDark">
                         <img src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&q=80&w=800" alt="Website Undangan Digital" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500 group-hover:scale-110 opacity-60 group-hover:opacity-100">
-                        <div class="absolute inset-0 bg-accent/20 mix-blend-multiply group-hover:opacity-0 transition-opacity"></div>
+                        <div class="absolute inset-0 bg-bgDarker/80 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                            <span class="px-4 py-2 border border-accent text-accent rounded font-mono text-sm bg-bgDarker/50">View Details</span>
+                        </div>
                     </div>
                     <div class="p-8 flex flex-col flex-grow">
                         <div class="flex justify-between items-start mb-6">
                             <i data-lucide="mail-open" class="w-8 h-8 text-accent"></i>
                             <i data-lucide="external-link" class="w-5 h-5 text-textSecondary opacity-0 group-hover:opacity-100 transition-opacity duration-300"></i>
                         </div>
-                        <h3 class="text-xl font-bold text-white mb-3 group-hover:text-accent transition-colors">Website Undangan</h3>
-                        <p class="text-textSecondary text-sm mb-6 flex-grow project-desc">A digital invitation platform allowing users to generate, customize, and distribute event invitations easily.</p>
+                        <h3 class="text-xl font-bold text-textPrimary mb-3 group-hover:text-accent transition-colors">Website Undangan</h3>
+                        <p class="text-textSecondary text-sm mb-6 flex-grow project-desc">Built a dynamic digital invitation platform. Engineered customizable features allowing users to efficiently generate and distribute event invitations.</p>
                     </div>
                 </div>
 
                 <!-- Project 4: Website Gereja -->
-                <div class="glass-card rounded-xl overflow-hidden group flex flex-col h-full hover:-translate-y-2 transition-transform duration-300 cursor-pointer project-card" data-title="Website Profil Gereja" data-desc="A church profiling website featuring event schedules, sermon archives, and congregation management system." data-id-desc="Website profil gereja yang menampilkan jadwal acara, arsip khotbah, dan sistem manajemen jemaat." data-image="https://images.unsplash.com/photo-1438232992991-995b7058bbb3?auto=format&fit=crop&q=80&w=800" data-tech="Laravel, Livewire, MySQL, JS, Ajax, CSS" data-role="Fullstack Developer" data-id-role="Fullstack Developer">
+                <div class="glass-card rounded-xl overflow-hidden group flex flex-col h-full hover:-translate-y-2 transition-transform duration-300 cursor-pointer project-card" data-title="Website Profil Gereja" data-desc="Created a comprehensive church profiling management system. Streamlined congregation data management, sermon archives, and event scheduling." data-id-desc="Membuat sistem manajemen profil gereja komprehensif. Menyederhanakan manajemen data jemaat, arsip khotbah, dan penjadwalan acara." data-image="https://images.unsplash.com/photo-1438232992991-995b7058bbb3?auto=format&fit=crop&q=80&w=800" data-tech="Laravel, Livewire, MySQL, JS, Ajax, CSS" data-role="Fullstack Developer" data-id-role="Fullstack Developer">
                     <div class="relative h-48 overflow-hidden bg-bgDark">
                         <img src="https://images.unsplash.com/photo-1438232992991-995b7058bbb3?auto=format&fit=crop&q=80&w=800" alt="Website Profil Gereja" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500 group-hover:scale-110 opacity-60 group-hover:opacity-100">
-                        <div class="absolute inset-0 bg-accent/20 mix-blend-multiply group-hover:opacity-0 transition-opacity"></div>
+                        <div class="absolute inset-0 bg-bgDarker/80 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                            <span class="px-4 py-2 border border-accent text-accent rounded font-mono text-sm bg-bgDarker/50">View Details</span>
+                        </div>
                     </div>
                     <div class="p-8 flex flex-col flex-grow">
                         <div class="flex justify-between items-start mb-6">
                             <i data-lucide="landmark" class="w-8 h-8 text-accent"></i>
                             <i data-lucide="external-link" class="w-5 h-5 text-textSecondary opacity-0 group-hover:opacity-100 transition-opacity duration-300"></i>
                         </div>
-                        <h3 class="text-xl font-bold text-white mb-3 group-hover:text-accent transition-colors">Website Gereja</h3>
-                        <p class="text-textSecondary text-sm mb-6 flex-grow project-desc">A church profiling website featuring event schedules, sermon archives, and congregation management system.</p>
+                        <h3 class="text-xl font-bold text-textPrimary mb-3 group-hover:text-accent transition-colors">Website Gereja</h3>
+                        <p class="text-textSecondary text-sm mb-6 flex-grow project-desc">Created a comprehensive church profiling management system. Streamlined congregation data management, sermon archives, and event scheduling.</p>
                     </div>
                 </div>
 
                 <!-- Project 5: Website Event -->
-                <div class="glass-card rounded-xl overflow-hidden group flex flex-col h-full hover:-translate-y-2 transition-transform duration-300 cursor-pointer project-card" data-title="Website Event Landing Page" data-desc="A highly responsive and animated front-end landing page for upcoming events and ticketing information." data-id-desc="Halaman landing front-end yang sangat responsif dan memiliki animasi untuk acara mendatang dan informasi tiket." data-image="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&q=80&w=800" data-tech="HTML, CSS, JS" data-role="Frontend Developer" data-id-role="Frontend Developer">
+                <div class="glass-card rounded-xl overflow-hidden group flex flex-col h-full hover:-translate-y-2 transition-transform duration-300 cursor-pointer project-card" data-title="Website Event Landing Page" data-desc="Engineered a highly responsive landing page for event ticketing. Focused on smooth animations, seamless transitions, and optimal overall performance." data-id-desc="Merancang halaman landing responsif untuk tiket acara. Fokus pada animasi halus, transisi mulus, serta optimasi performa." data-image="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&q=80&w=800" data-tech="HTML, CSS, JS" data-role="Frontend Developer" data-id-role="Frontend Developer">
                     <div class="relative h-48 overflow-hidden bg-bgDark">
                         <img src="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&q=80&w=800" alt="Website Event Landing Page" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500 group-hover:scale-110 opacity-60 group-hover:opacity-100">
-                        <div class="absolute inset-0 bg-accent/20 mix-blend-multiply group-hover:opacity-0 transition-opacity"></div>
+                        <div class="absolute inset-0 bg-bgDarker/80 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                            <span class="px-4 py-2 border border-accent text-accent rounded font-mono text-sm bg-bgDarker/50">View Details</span>
+                        </div>
                     </div>
                     <div class="p-8 flex flex-col flex-grow">
                         <div class="flex justify-between items-start mb-6">
                             <i data-lucide="calendar" class="w-8 h-8 text-accent"></i>
                             <i data-lucide="external-link" class="w-5 h-5 text-textSecondary opacity-0 group-hover:opacity-100 transition-opacity duration-300"></i>
                         </div>
-                        <h3 class="text-xl font-bold text-white mb-3 group-hover:text-accent transition-colors">Website Event</h3>
-                        <p class="text-textSecondary text-sm mb-6 flex-grow project-desc">A highly responsive and animated front-end landing page for upcoming events and ticketing information.</p>
+                        <h3 class="text-xl font-bold text-textPrimary mb-3 group-hover:text-accent transition-colors">Website Event</h3>
+                        <p class="text-textSecondary text-sm mb-6 flex-grow project-desc">Engineered a highly responsive landing page for event ticketing. Focused on smooth animations, seamless transitions, and optimal overall performance.</p>
                     </div>
                 </div>
 
                 <!-- Project 6: Entice -->
-                <div class="glass-card rounded-xl overflow-hidden group flex flex-col h-full hover:-translate-y-2 transition-transform duration-300 cursor-pointer project-card" data-title="Entice (Project Skripsi)" data-desc="A final year university project utilizing Ruby on Rails backend to handle data efficiently." data-id-desc="Proyek skripsi tahun akhir universitas yang menggunakan backend Ruby on Rails untuk menangani data secara efisien." data-image="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&q=80&w=800" data-tech="Ruby on Rails, Ajax, Datatable" data-role="Solo Developer" data-id-role="Solo Developer">
+                <div class="glass-card rounded-xl overflow-hidden group flex flex-col h-full hover:-translate-y-2 transition-transform duration-300 cursor-pointer project-card" data-title="Entice (Project Skripsi)" data-desc="Developed a university project application utilizing a Ruby on Rails backend to handle data efficiently and showcase software engineering principles." data-id-desc="Mengembangkan aplikasi proyek universitas memanfaatkan backend Ruby on Rails API untuk menangani data dan menerapkan prinsip rekayasa perangkat lunak." data-image="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&q=80&w=800" data-tech="Ruby on Rails, Ajax, Datatable" data-role="Solo Developer" data-id-role="Solo Developer">
                     <div class="relative h-48 overflow-hidden bg-bgDark">
                         <img src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&q=80&w=800" alt="Entice Project Skripsi" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500 group-hover:scale-110 opacity-60 group-hover:opacity-100">
-                        <div class="absolute inset-0 bg-accent/20 mix-blend-multiply group-hover:opacity-0 transition-opacity"></div>
+                        <div class="absolute inset-0 bg-bgDarker/80 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                            <span class="px-4 py-2 border border-accent text-accent rounded font-mono text-sm bg-bgDarker/50">View Details</span>
+                        </div>
                     </div>
                     <div class="p-8 flex flex-col flex-grow">
                         <div class="flex justify-between items-start mb-6">
                             <i data-lucide="graduation-cap" class="w-8 h-8 text-accent"></i>
                             <i data-lucide="external-link" class="w-5 h-5 text-textSecondary opacity-0 group-hover:opacity-100 transition-opacity duration-300"></i>
                         </div>
-                        <h3 class="text-xl font-bold text-white mb-3 group-hover:text-accent transition-colors">Entice (Project Skripsi)</h3>
-                        <p class="text-textSecondary text-sm mb-6 flex-grow project-desc">A final year university project utilizing Ruby on Rails backend to handle data efficiently.</p>
+                        <h3 class="text-xl font-bold text-textPrimary mb-3 group-hover:text-accent transition-colors">Entice (Project Skripsi)</h3>
+                        <p class="text-textSecondary text-sm mb-6 flex-grow project-desc">Developed a university project application utilizing a Ruby on Rails backend to handle data efficiently and showcase software engineering principles.</p>
                     </div>
                 </div>
             </div>

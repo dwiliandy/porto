@@ -155,3 +155,20 @@ document.addEventListener('keydown', (e) => {
         closeModal();
     }
 });
+
+// Theme Toggle Logic
+const themeToggleBtn = document.getElementById('theme-toggle');
+const themeToggleMobileBtn = document.getElementById('theme-toggle-mobile');
+
+function toggleTheme() {
+    if (document.documentElement.classList.contains('dark')) {
+        document.documentElement.classList.remove('dark');
+        localStorage.setItem('theme', 'light');
+    } else {
+        document.documentElement.classList.add('dark');
+        localStorage.setItem('theme', 'dark');
+    }
+}
+
+if(themeToggleBtn) themeToggleBtn.addEventListener('click', toggleTheme);
+if(themeToggleMobileBtn) themeToggleMobileBtn.addEventListener('click', toggleTheme);
